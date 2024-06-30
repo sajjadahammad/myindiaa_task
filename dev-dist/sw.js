@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-a9fe0588'], (function (workbox) { 'use strict';
+define(['./workbox-37007d14'], (function (workbox) { 'use strict';
 
   self.addEventListener('message', event => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -85,20 +85,25 @@ define(['./workbox-a9fe0588'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
-    "revision": "0.pr2gq9c63hg"
+    "revision": "0.ceqa1e0mif8"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
     allowlist: [/^\/$/]
   }));
-  workbox.registerRoute(({
-    url
-  }) => {
-    return url.pathname.startsWith("/");
-  }, new workbox.CacheFirst({
-    "cacheName": "app-cache",
+  workbox.registerRoute(/^https:\/\/fakestoreapi\.com\/.*/, new workbox.NetworkFirst({
+    "cacheName": "api-cache",
     plugins: [new workbox.CacheableResponsePlugin({
       statuses: [0, 200]
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\.(?:png|jpg|jpeg|svg|gif)$/, new workbox.CacheFirst({
+    "cacheName": "image-cache",
+    plugins: [new workbox.CacheableResponsePlugin({
+      statuses: [0, 200]
+    }), new workbox.ExpirationPlugin({
+      maxEntries: 50,
+      maxAgeSeconds: 604800
     })]
   }), 'GET');
 

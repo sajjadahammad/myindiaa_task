@@ -26,9 +26,9 @@ export default function Navbar() {
 
                     <div className="hidden md:block">
                         <nav aria-label="Global">
-                            <ul className="flex items-center gap-6 text-sm">
+                            <ul className="flex items-center gap-6">
                                 <li>
-                                    <Link to={'/products'} className={`transition hover:text-gray-500/75 ${location.pathname ==='/products' ? 'font-semibold text-black' : 'text-gray-500 '}`} href="#"> Products </Link>
+                                    <Link to={'/products'} className={`transition text-base hover:text-gray-500/75 ${location.pathname ==='/products' ? 'font-semibold text-black' : 'text-gray-500 '}`} href="#"> Products </Link>
                                 </li>
                             </ul>
                         </nav>
