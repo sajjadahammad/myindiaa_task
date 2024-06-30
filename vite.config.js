@@ -19,30 +19,39 @@ export default defineConfig({
         theme_color: '#000000',
         icons: [
           {
-            "src": "public/assets/icons/manifest-icon-192.maskable.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any"
+            src: "public/assets/icons/manifest-icon-192.maskable.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "any"
           },
           {
-            "src": "public/assets/icons/manifest-icon-192.maskable.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable"
+            src: "public/assets/icons/manifest-icon-192.maskable.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable"
           },
           {
-            "src": "public/assets/icons/manifest-icon-512.maskable.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any"
+            src: "public/assets/icons/manifest-icon-512.maskable.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any"
           },
           {
-            "src": "public/assets/icons/manifest-icon-512.maskable.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
+            src: "public/assets/icons/manifest-icon-512.maskable.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable"
           }
         ],
+        screenshots: [
+          {
+           src: "public/assets/icons/manifest-icon-512.maskable.png",
+            sizes: "512x512",
+            type: "image/png",
+            form_factor: "wide",
+            label: "Wonder Widgets"
+          }
+        ]
       },
       workbox: {
         runtimeCaching: [
