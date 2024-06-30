@@ -18,7 +18,7 @@ export default function Navbar() {
             <div className="px-4 sm:px-6 lg:px-8 relative">
                 <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
-                        <Link className="block text-teal-600" to={'/'}>
+                        <Link className="block" to={'/'}>
                             <span className="sr-only">Home</span>
                             <img src="/assets/logo.png" alt="" className="h-10 rounded-full" />
                         </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
                             className="rounded-md  px-5 py-2.5 text-sm font-medium text-black shadow"
                             to="/cart"
                         >
-                            <FaCartShopping />
+                            <FaCartShopping size={18}/>
                         </Link>
 
                         <div className="block md:hidden">
@@ -60,11 +60,14 @@ export default function Navbar() {
                 </div>
                 <div className={`absolute ${nav ? ' top-0' : '-top-[200px]'} bg-white w-full left-0 py-4 px-4 transition-all ease-in shadow`}>
                     <div className="flex justify-between">
+                    <Link className="block" to={'/'} onClick={handleNav}>
                     <img src="/assets/logo.png" alt="" className="h-10 rounded-full" />
+                    </Link>
                     <IoClose onClick={handleNav} size={24} className=" cursor-pointer"/>
                     </div>
                         <div className="flex flex-col text-center space-y-4">
-                        <Link to={'/products'} className={`transition hover:text-gray-500/75 ${location.pathname ==='/products' ? 'font-semibold text-black' : 'text-gray-500 '}`} href="#"> Products </Link>
+                        <Link onClick={handleNav} to={'/products'} className={`transition hover:text-gray-500/75 ${location.pathname ==='/products' ? 'font-semibold text-black' : 'text-gray-500 '}`} > Products </Link>
+                        <Link onClick={handleNav} to={'/cart'} className={`transition hover:text-gray-500/75 ${location.pathname ==='/cart' ? 'font-semibold text-black' : 'text-gray-500 '}`} > Cart </Link>
 
                         </div>
                 </div>

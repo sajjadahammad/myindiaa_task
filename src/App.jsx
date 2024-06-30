@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Cart from './pages/Cart'
 import ProductDetail from './pages/ProductDetail'
 import Product from './pages/Product'
+import { Toaster } from 'sonner'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -23,7 +24,7 @@ const router=createBrowserRouter(
 function App() {
   return (
     <>
-    
+     <Toaster position="top-right"/>
      <RouterProvider router={router}/>
     </>
   )
