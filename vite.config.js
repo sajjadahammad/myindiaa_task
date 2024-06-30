@@ -10,11 +10,13 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
+      registerType:'autoUpdate',
       manifest: {
         name: 'Fakecomm',
         short_name: 'fcomm',
         start_url: '/',
         display: 'standalone',
+        description:"This is a Mock Ecommerce website with cart functionality the datas are coming from fakestore api",
         background_color: '#ffffff',
         theme_color: '#000000',
         icons: [
