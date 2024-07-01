@@ -6,7 +6,6 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(),
     VitePWA({
-
       devOptions: {
         enabled: true
       },
@@ -56,6 +55,7 @@ export default defineConfig({
         ]
       },
       workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif}'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fakestoreapi\.com\/.*/,
@@ -64,6 +64,10 @@ export default defineConfig({
               cacheName: 'api-cache',
               cacheableResponse: {
                 statuses: [0, 200],
+              },
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 24 * 60 * 60,
               },
             },
           },
@@ -78,6 +82,37 @@ export default defineConfig({
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 7 * 24 * 60 * 60,
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:js|css)$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'static-resources',
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365,
+              },
+            },
+          },
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages',
+              cacheableResponse: {
+                statuses: [0, 200],
               },
             },
           },
