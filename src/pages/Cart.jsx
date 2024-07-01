@@ -1,11 +1,10 @@
-import { useSelector,useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { cartItem, selectTotalPrice } from "../store/cartSlice"
 import CartItem from "../components/CartItem"
 
 
 export default function Cart() {
 
-    const dispath =useDispatch()
     const cartItems = useSelector(cartItem)
     const total = useSelector(selectTotalPrice)
     console.log('s',cartItems);

@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { FaCartShopping } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
+import CartDrawer from "./CartDrawer";
 export default function Navbar() {
 
     const location = useLocation()
@@ -35,12 +35,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <Link
-                            className="rounded-md  px-5 py-2.5 text-sm font-medium text-black shadow"
-                            to="/cart"
-                        >
-                            <FaCartShopping size={18}/>
-                        </Link>
+                      <CartDrawer/>
 
                         <div className="block md:hidden">
                             <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75" onClick={handleNav}>

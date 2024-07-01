@@ -13,8 +13,7 @@ This is a React-based e-commerce application that uses the FakeStore API to disp
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [PWA Support](#pwa-support)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 

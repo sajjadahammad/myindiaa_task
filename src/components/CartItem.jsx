@@ -3,6 +3,7 @@ import { incrementQuantity,decrementQuantity, removeItem } from "../store/cartSl
 import { MdDelete } from "react-icons/md";
 import { toast } from "sonner";
 
+// eslint-disable-next-line react/prop-types
 export default function CartItem({item:{id,image,title,description,quantity,price,rating:{rate,count}}}) {
 
     const deleteCart=()=>{
@@ -14,7 +15,7 @@ export default function CartItem({item:{id,image,title,description,quantity,pric
     const dispatch = useDispatch()
   return (
     <div className="py-5 mb-5">
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-6 items-center pb-3">
             <img src={image} alt="" className="w-20 h-20 rounded-md" />
                 <div>
                     <h2 className="font-semibold text-sm">{title}</h2>
