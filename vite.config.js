@@ -26,33 +26,40 @@ export default defineConfig({
             purpose: "any"
           },
           {
-            src: "assets/icons/manifest-icon-192.maskable.png",
+            src: "/assets/icons/manifest-icon-192.maskable.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "maskable"
           },
           {
-            src: "assets/icons/manifest-icon-512.maskable.png",
+            src: "/assets/icons/manifest-icon-512.maskable.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any"
           },
           {
-            src: "assets/icons/manifest-icon-512.maskable.png",
+            src: "/assets/icons/manifest-icon-512.maskable.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "maskable"
           }
         ],
-        // screenshots: [
-        //   {
-        //    src: "public/assets/icons/manifest-icon-512.maskable.png",
-        //     sizes: "512x512",
-        //     type: "image/png",
-        //     form_factor: "wide",
-        //     label: "Wonder Widgets"
-        //   }
-        // ]
+        screenshots: [
+          {
+           src: "/assets/scrnshtdsk.png",
+            sizes: "1920x907",
+            type: "image/png",
+            form_factor: "wide",
+            label: "Desktop"
+          },
+          {
+           src: "/assets/scrnsht.png",
+            sizes: "369x795",
+            type: "image/png",
+            // form_factor: "wide",
+            label: "Mobile"
+          }
+        ]
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif}'],
