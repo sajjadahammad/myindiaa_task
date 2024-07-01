@@ -61,7 +61,7 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif}'],
+        // globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif}'],
         runtimeCaching:[{
           urlPattern:({url})=>{
             return url.pathname.startsWith('/')
