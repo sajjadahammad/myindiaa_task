@@ -6,9 +6,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(),
     VitePWA({
-      devOptions: {
-        enabled: true
-      },
+      // devOptions: {
+      //   enabled: true
+      // },
       registerType:'autoUpdate',
       manifest: {
         name: 'Fakecomm',
