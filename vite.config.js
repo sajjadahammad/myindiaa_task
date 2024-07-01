@@ -20,7 +20,7 @@ export default defineConfig({
         theme_color: '#000000',
         icons: [
           {
-            src: "public/assets/icons/manifest-icon-192.maskable.png",
+            src: "assets/icons/manifest-icon-192.maskable.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "any"
