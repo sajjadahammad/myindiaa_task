@@ -5,6 +5,7 @@ import Cart from './pages/Cart'
 import ProductDetail from './pages/ProductDetail'
 import Product from './pages/Product'
 import { Toaster } from 'sonner'
+import { ScrollRestoration } from "react-router-dom";
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router=createBrowserRouter(
 function App() {
   return (
     <>
+    <ScrollRestoration/>
      <Toaster position="top-right"/>
      <RouterProvider router={router}/>
     </>
