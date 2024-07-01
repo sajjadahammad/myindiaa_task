@@ -6,9 +6,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(),
     VitePWA({
-      // devOptions: {
-      //   enabled: true
-      // },
+      devOptions: {
+        enabled: true
+      },
       registerType:'autoUpdate',
       manifest: {
         name: 'Fakecomm',
@@ -56,7 +56,6 @@ export default defineConfig({
            src: "/assets/scrnsht.png",
             sizes: "369x795",
             type: "image/png",
-            // form_factor: "wide",
             label: "Mobile"
           }
         ]
@@ -107,6 +106,7 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'google-fonts',
+              statuses: [0, 200],
               expiration: {
                 maxEntries: 10,
                 maxAgeSeconds: 60 * 60 * 24 * 365,
