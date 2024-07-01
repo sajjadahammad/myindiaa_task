@@ -44,15 +44,15 @@ export default defineConfig({
             purpose: "maskable"
           }
         ],
-        screenshots: [
-          {
-           src: "public/assets/icons/manifest-icon-512.maskable.png",
-            sizes: "512x512",
-            type: "image/png",
-            form_factor: "wide",
-            label: "Wonder Widgets"
-          }
-        ]
+        // screenshots: [
+        //   {
+        //    src: "public/assets/icons/manifest-icon-512.maskable.png",
+        //     sizes: "512x512",
+        //     type: "image/png",
+        //     form_factor: "wide",
+        //     label: "Wonder Widgets"
+        //   }
+        // ]
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,gif}'],
